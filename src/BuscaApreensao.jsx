@@ -213,7 +213,7 @@ export default function BuscaApreensao() {
                 </div>
                 <div className="lp-socio-info">
                   <strong>Victor Naidhig</strong>
-                  <span>Sócio Fundador</span>
+                  <span>Sóciof Fundador</span>
                 </div>
               </div>
             </div>
@@ -229,7 +229,7 @@ export default function BuscaApreensao() {
             <div>
               <div className="lp-label">O que está em jogo</div>
               <h2 className="lp-titulo-secao">
-                A demora pode<br />custar <em>muito mais</em><br />do que o carro.
+                A demora pode<br />custar muito mais<br />do que o carro.
               </h2>
               <div className="lp-problema-texto">
                 <p>
@@ -276,7 +276,7 @@ export default function BuscaApreensao() {
         <div className="lp-section">
           <div className="lp-label">Nossa atuação</div>
           <h2 className="lp-titulo-secao">
-            Como <em>defendemos</em> o seu caso
+            Como defendemos o seu caso
           </h2>
           <div className="lp-como-grid">
             {servicos.map((s, i) => (
@@ -297,7 +297,7 @@ export default function BuscaApreensao() {
         <div className="lp-section">
           <div className="lp-label">Perguntas frequentes</div>
           <h2 className="lp-titulo-secao">
-            Entenda seus <em>direitos</em>
+            Entenda seus direitos
           </h2>
           <div className="lp-faq-list">
             {faqs.map((f, i) => (
