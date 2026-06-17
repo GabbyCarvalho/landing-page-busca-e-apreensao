@@ -101,7 +101,7 @@ export default function BuscaApreensao() {
             <FaExclamationTriangle />
             <p>
               A apreensão não significa perda definitiva — existem meios legais para recuperar
-              seu veículo.
+              seu veículo. Estamos aqui para te ajudar!
             </p>
           </div>
 
