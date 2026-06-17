@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     pergunta: "Quanto custa a análise do meu caso?",
-    resposta: "A primeira consulta e análise do seu caso são <strong>totalmente gratuitas</strong>. Você pode nos contatar sem qualquer compromisso ou risco de cobrança. Só formalizamos o contrato de representação se você decidir prosseguir com a sua defesa.",
+    resposta: "Cada situação exige uma <strong>avaliação individual.</strong> Entre em contato para que possamos entender o seu caso e fornecer informações claras sobre os próximos passos e eventuais custos envolvidos."
   },
   {
     pergunta: "O atendimento pode ser feito de forma online?",
@@ -66,6 +66,7 @@ const servicos = [
     desc: "Atuamos com urgência para obter liminares e decisões judiciais que assegurem a devolução imediata do seu veículo.",
   },
 ];
+
 
 // ─── COMPONENTE ─────────────────────────────────────────────────────────────
 export default function BuscaApreensao() {
@@ -276,7 +277,7 @@ export default function BuscaApreensao() {
         <div className="lp-section">
           <div className="lp-label">Nossa atuação</div>
           <h2 className="lp-titulo-secao">
-            Como defendemos o seu caso
+            Conheça outras áreas em que podemos atuar<br/> para defender seus direitos e interesses
           </h2>
           <div className="lp-como-grid">
             {servicos.map((s, i) => (
