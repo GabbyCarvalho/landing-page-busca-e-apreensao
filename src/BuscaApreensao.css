@@ -157,8 +157,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  background: var(--dourado);
-  color: var(--preto);
+  background: #25d366;
+  color: #ffff;
   font-family: var(--fonte-texto);
   font-size: 0.95rem;
   font-weight: 700;
@@ -169,11 +169,13 @@
   text-decoration: none;
   transition: background 0.25s, transform 0.2s;
   width: fit-content;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .lp-btn-primary:hover {
-  background: var(--dourado-claro);
-  transform: translateY(-2px);
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+  animation: none;
 }
 
 .lp-btn-ghost {
@@ -263,13 +265,29 @@
   margin: 0 auto;
 }
 
+.lp-titulo-secao-intro {
+color: var(--preto);
+font-size: 3rem;
+font-family: var(--fonte-titulo);
+line-height: 1;
+font-size: clamp(2.5rem, 4vw, 4rem);
+font-weight: 300;
+line-height: 1.1;
+margin-bottom: 1.2rem;
+max-width: 700px;
+
+}
+.lp-full-section-intro .lp-titulo-secao-intro em {
+  color: var(--dourado-escuro);
+}
+
 .lp-full-section {
   background: var(--preto-suave);
   padding: 5rem 0;
 }
 
 .lp-full-section-dark {
-  background: var(--preto-card);
+  background: var(--preto-suave);
   padding: 5rem 0;
 }
 
@@ -279,7 +297,7 @@
 }
 
 .lp-full-section-dark .lp-titulo-secao {
-  color: var(--preto);
+  color: var(--branco);
 }
 
 .lp-full-section-dark .lp-titulo-secao em {
@@ -295,7 +313,7 @@
 }
 
 .lp-full-section-dark .lp-faq-pergunta {
-  color: var(--preto);
+  color: var(--branco);
 }
 
 .lp-full-section-dark .lp-faq-btn:hover .lp-faq-pergunta {
@@ -307,11 +325,11 @@
 }
 
 .lp-full-section-dark .lp-faq-item {
-  border-color: rgba(0, 0, 0, 0.1);
+  border-color: var(--branco);
 }
 
 .lp-full-section-dark .lp-faq-resposta {
-  color: #444;
+  color: var(--branco);
 }
 
 .lp-full-section-dark .lp-faq-resposta strong {
@@ -512,6 +530,9 @@
 }
 
 /* ── SOBRE O ESCRITÓRIO ── */
+.lp-full-section-intro{
+  background: #f0ede8;
+}
 .lp-sobre-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -665,7 +686,7 @@
 
 /* ── CTA FINAL ── */
 .lp-cta-final {
-  background: var(--preto-suave);
+  background: var(--branco);
   border-top: 1px solid rgba(202, 148, 87, 0.2);
   padding: 8rem 5rem;
   text-align: center;
@@ -676,7 +697,7 @@
   font-size: clamp(2.5rem, 4vw, 4rem);
   font-weight: 300;
   line-height: 1.1;
-  color: var(--branco);
+  color: var(--preto);
   margin-bottom: 1.2rem;
   max-width: 700px;
   margin-left: auto;
@@ -691,7 +712,7 @@
 .lp-cta-sub {
   font-size: 1rem;
   font-weight: 300;
-  color: var(--cinza-claro);
+  color: var(--preto);
   max-width: 500px;
   margin: 0 auto 2.5rem;
   line-height: 1.7;

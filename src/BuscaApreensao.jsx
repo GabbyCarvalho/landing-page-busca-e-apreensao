@@ -129,13 +129,13 @@ export default function BuscaApreensao() {
       </section>
 
       {/* ── SOBRE NÓS ── */}
-      <div className="lp-full-section-dark" id="sobre">
+      <div className="lp-full-section-intro" id="sobre">
         <div className="lp-section">
 
           {/* Cabeçalho */}
           <div className="lp-sobre-header">
             <div className="lp-label">Quem somos</div>
-            <h2 className="lp-titulo-secao">
+            <h2 className="lp-titulo-secao-intro">
               Pedro & Naidhig<br /><em>Advogados Associados</em>
             </h2>
           </div>
@@ -277,7 +277,7 @@ export default function BuscaApreensao() {
         <div className="lp-section">
           <div className="lp-label">Nossa atuação</div>
           <h2 className="lp-titulo-secao">
-            Conheça outras áreas em que podemos atuar<br/> para defender seus direitos e interesses
+            Conheça outras áreas em que podemos atuar<br/> para defender <em>seus direitos e interesses</em>
           </h2>
           <div className="lp-como-grid">
             {servicos.map((s, i) => (
@@ -298,7 +298,7 @@ export default function BuscaApreensao() {
         <div className="lp-section">
           <div className="lp-label">Perguntas frequentes</div>
           <h2 className="lp-titulo-secao">
-            Entenda seus direitos
+            Entenda <em>seus direitos</em>
           </h2>
           <div className="lp-faq-list">
             {faqs.map((f, i) => (
@@ -337,9 +337,7 @@ export default function BuscaApreensao() {
           <a href={WA_LINK} target="_blank" rel="noreferrer" className="lp-btn-primary">
             <FaWhatsapp /> Quero minha defesa agora
           </a>
-          <a href="mailto:contato@pedroenaidhig.adv.br" className="lp-btn-ghost">
-            <FiMail /> Enviar e-mail
-          </a>
+
         </div>
       </div>
 
