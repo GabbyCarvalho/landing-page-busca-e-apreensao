@@ -1,8 +1,11 @@
 import { useState } from "react";
-import { FaWhatsapp, FaChevronDown, FaChevronUp, FaGavel, FaCar, FaExclamationTriangle, FaShieldAlt, FaCheckCircle, FaClock } from "react-icons/fa";
+import { FaWhatsapp,FaStar,  FaGavel, FaCar, FaExclamationTriangle, FaShieldAlt, FaCheckCircle, FaClock, FaUndoAlt, FaPlus, FaMinus  } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import "./BuscaApreensao.css";
 import apreensao from "./assets/apreensao.jpg"
+import victor from "./assets/victor.jpeg"
+import pedro from "./assets/pedro.jpeg"
+import logo from "./assets/logo.png"
 // ─── DADOS ──────────────────────────────────────────────────────────────────
 const faqs = [
   {
@@ -47,6 +50,16 @@ const riscos = [
     desc: "Seu CPF pode ficar negativado até a quitação integral, impedindo novos financiamentos.",
     icon: <FaShieldAlt />,
   },
+    {
+    titulo: "Perda definitiva não é automática",
+    desc: "A apreensão do veículo não significa que tudo está perdido. Existem medidas legais que podem ser analisadas para cada situação.",
+    icon: <FaGavel />,
+  },
+    {
+    titulo: "Possíveis irregularidades no contrato",
+    desc: "Juros abusivos, encargos indevidos e falhas no processo de busca e apreensão podem ser questionados judicialmente, dependendo do caso.",
+    icon: <FaUndoAlt />,
+  },
 ];
 
 const servicos = [
@@ -67,14 +80,47 @@ const servicos = [
   },
 ];
 
+// Avaliações do Google
+const avaliacoes = [
+  {
+    nome: "Carlos M.",
+    nota: 5,
+    texto: "Recuperei meu veículo apreendido em menos de uma semana! Equipe muito competente e atenciosa, me orientaram em cada etapa do processo.",
+    data: "há 2 semanas",
+  },
+  {
+    nome: "Fernanda Ribeiro",
+    nota: 5,
+    texto: "Fui surpreendida com a eficiência. Carro apreendido numa sexta, segunda já tinha advogado cuidando do caso. Recomendo muito!",
+    data: "há 1 mês",
+  },
+  {
+    nome: "Roberto Santos",
+    nota: 5,
+    texto: "Além de recuperar meu carro, ainda conseguiram reduzir o saldo devedor do financiamento. Serviço excelente e transparente.",
+    data: "há 1 mês",
+  },
+  {
+    nome: "Juliana Silva",
+    nota: 5,
+    texto: "Atendimento 100% online, rápido e eficiente. Não precisei sair de casa e consegui reverter a busca e apreensão do meu veículo.",
+    data: "há 2 meses",
+  },
+];
+
 
 // ─── COMPONENTE ─────────────────────────────────────────────────────────────
 export default function BuscaApreensao() {
   const [faqAberto, setFaqAberto] = useState(null);
   const WA_LINK =
-    "https://wa.me/SEUNUMERO?text=Ol%C3%A1%2C%20tive%20meu%20ve%C3%ADculo%20apreendido%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20urgente.";
+    "https://wa.me/1930200163?text=Ol%C3%A1%2C%20tive%20meu%20ve%C3%ADculo%20apreendido%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20urgente.";
 
   const toggleFaq = (i) => setFaqAberto(faqAberto === i ? null : i);
+  const renderEstrelas = (nota) =>
+    Array.from({ length: nota }, (_, i) => (
+      <FaStar key={i} className="lp-estrela" />
+    ));
+
 
   return (
     <>
@@ -82,29 +128,25 @@ export default function BuscaApreensao() {
       <section className="lp-hero">
         {/* LEFT */}
         <div className="lp-hero-left">
-          <div className="lp-hero-eyebrow">
-            <span>Defesa Especializada</span>
+
+          <div className="lp-logo">
+            <img src={logo} alt="Pedro & Naidhig Advogados Associados" />
           </div>
 
           <h1 className="lp-hero-titulo">
-            Seu veículo foi<br />
-            apreendido?<br />
-            <em>O prazo está correndo.</em>
+            Seu veículo foi apreendido no processo de <em>busca e apreensão</em>?<br />
+            Ainda é possível recuperar seu carro, mas o 
+            <em> prazo está correndo.</em>
           </h1>
 
-          <p className="lp-hero-sub">
-            Você tem apenas <strong style={{ color: "#f5f5f0" }}>5 dias</strong> para agir antes
-            que o banco possa leiloar seu carro. Nossa equipe está pronta para defender seu caso
-            imediatamente.
-          </p>
-
+{/* 
           <div className="lp-hero-urgencia">
             <FaExclamationTriangle />
             <p>
               A apreensão não significa perda definitiva — existem meios legais para recuperar
-              seu veículo. Estamos aqui para te ajudar!
+              seu veículo. 
             </p>
-          </div>
+          </div> */}
 
           <div className="lp-hero-ctas">
             <a href={WA_LINK} target="_blank" rel="noreferrer" className="lp-btn-primary">
@@ -118,12 +160,21 @@ export default function BuscaApreensao() {
 
         {/* RIGHT — foto do carro */}
         <div className="lp-hero-right">
-          {/* substitua src pelo import da sua foto: import fotoCarro from "./assets/carro.jpg" */}
+          
           <img
             src={apreensao}
             alt="Veículo apreendido"
             className="lp-hero-foto"
           />
+       
+          <div className="lp-hero-right-box">
+            <FaExclamationTriangle />
+            <p>
+              A apreensão <strong>não</strong> significa perda definitiva. <br/>
+              Você tem apenas <strong>5 dias</strong> para agir antes que o banco possa leiloar seu carro.
+             Estamos aqui para te ajudar!
+            </p>
+          </div>
           <div className="lp-hero-foto-overlay" />
         </div>
       </section>
@@ -197,24 +248,22 @@ export default function BuscaApreensao() {
             <div className="lp-socios-fotos">
               <div className="lp-socio-card">
                 <div className="lp-socio-foto-placeholder">
-                  {/* substitua por: <img src={fotoPedro} alt="Pedro" /> */}
-                  <FaGavel />
-                  <span>Foto — Pedro</span>
+                   <img src={pedro} alt="Pedro" /> 
                 </div>
                 <div className="lp-socio-info">
                   <strong>Pedro</strong>
                   <span>Sócio Fundador</span>
+                  <span>OAB: 329.648</span>
                 </div>
               </div>
               <div className="lp-socio-card">
                 <div className="lp-socio-foto-placeholder">
-                  {/* substitua por: <img src={fotoNaidhig} alt="Naidhig" /> */}
-                  <FaGavel />
-                  <span>Foto — Naidhig</span>
+                  <img src={victor} alt="Naidhig" /> 
                 </div>
                 <div className="lp-socio-info">
-                  <strong>Victor Naidhig</strong>
-                  <span>Sóciof Fundador</span>
+                  <strong>Victor</strong>
+                  <span>Sócio Fundador</span>
+                  <span>OAB: 330.578</span>
                 </div>
               </div>
             </div>
@@ -233,17 +282,22 @@ export default function BuscaApreensao() {
                 A demora pode<br />custar muito mais<br />do que o carro.
               </h2>
               <div className="lp-problema-texto">
-                <p>
-                  A Busca e Apreensão é um procedimento judicial que permite ao banco{" "}
-                  <strong>retomar o veículo dado em garantia de financiamento</strong>. O processo
-                  é rápido, mas existem defesas legais eficazes — se acionadas a tempo.
-                </p>
-                <p>
-                  O que muitos não sabem é que os bancos frequentemente cometem{" "}
-                  <strong>erros processuais e inserem cláusulas abusivas</strong> nos contratos, o
-                  que pode tornar a apreensão ilegal ou reduzir significativamente o valor da
-                  dívida.
-                </p>
+                  <p>
+                    A <strong>Busca e Apreensão</strong> é um procedimento judicial que permite ao banco{" "}
+                    retomar o veículo dado em garantia de financiamento. Se você está enfrentando
+                    um caso de <strong>veículo apreendido</strong> ou <strong>carro apreendido</strong>,
+                    saiba que a apreensão <strong>nem sempre significa a perda definitiva do bem</strong>. Em muitos
+                    casos, ainda  <strong>é possível recuperar o veículo</strong> por meio das medidas
+                    jurídicas adequadas.
+                  </p>
+                   <p>
+                    O processo de <strong>Busca e Apreensão</strong> costuma ser rápido, mas existem
+                    defesas legais eficazes quando acionadas dentro do prazo. O que muitos não
+                    sabem é que os bancos frequentemente cometem <strong>erros processuais e utilizam
+                    cláusulas abusivas</strong> nos contratos, o que pode tornar a apreensão ilegal ou
+                    reduzir significativamente o valor da dívida, aumentando as chances de
+                    <strong> recuperar o veículo apreendido</strong>.
+                  </p>
                 <a
                   href={WA_LINK}
                   target="_blank"
@@ -268,6 +322,48 @@ export default function BuscaApreensao() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </div>
+
+        {/* ── AVALIAÇÕES DO GOOGLE ── */}
+      <div className="lp-full-section-intro" id="avaliacoes">
+        <div className="lp-section">
+          <div className="lp-label">Avaliações Google</div>
+          <h2 className="lp-titulo-secao-intro">
+            O que dizem nossos clientes
+          </h2>
+          <div className="lp-avaliacoes-nota-geral">
+            <div className="lp-avaliacoes-nota-numero">5,0</div>
+            <div className="lp-avaliacoes-nota-info">
+              <div className="lp-avaliacoes-estrelas">
+                {renderEstrelas(5)}
+              </div>
+              <div className="lp-avaliacoes-google-label">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ verticalAlign: "middle", marginRight: 4 }}>
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                Google — Avaliações verificadas
+              </div>
+            </div>
+          </div>
+          <div className="lp-avaliacoes-grid">
+            {avaliacoes.map((av, i) => (
+              <div className="lp-avaliacao-card" key={i}>
+                <div className="lp-avaliacao-header">
+                  <div className="lp-avaliacao-avatar">{av.nome.charAt(0)}</div>
+                  <div>
+                    <div className="lp-avaliacao-nome">{av.nome}</div>
+                    <div className="lp-avaliacao-estrelas">{renderEstrelas(av.nota)}</div>
+                  </div>
+                  <div className="lp-avaliacao-data">{av.data}</div>
+                </div>
+                <p className="lp-avaliacao-texto">{av.texto}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -306,7 +402,7 @@ export default function BuscaApreensao() {
                 <button className="lp-faq-btn" onClick={() => toggleFaq(i)}>
                   <span className="lp-faq-pergunta">{f.pergunta}</span>
                   <span className="lp-faq-icone">
-                    {faqAberto === i ? <FaChevronUp /> : <FaChevronDown />}
+                    {faqAberto === i ? <FaMinus /> : <FaPlus />}
                   </span>
                 </button>
                 {faqAberto === i && (
@@ -330,8 +426,7 @@ export default function BuscaApreensao() {
           Não deixe o prazo<br />encerrar <em>sem agir.</em>
         </h2>
         <p className="lp-cta-sub">
-          Fale agora com um advogado especializado. A primeira consulta é gratuita e sem
-          compromisso.
+         Descubra qual é o melhor caminho para o seu caso com orientação especializada.
         </p>
         <div className="lp-cta-final-btns">
           <a href={WA_LINK} target="_blank" rel="noreferrer" className="lp-btn-primary">
@@ -349,7 +444,7 @@ export default function BuscaApreensao() {
         </p>
         <div className="lp-footer-links">
           <a href="/privacidade">Política de Privacidade</a>
-          <a href="/contato">Contato</a>
+          {/* <a href="/contato">Contato</a> */}
           <a href={WA_LINK} target="_blank" rel="noreferrer">
             <FaWhatsapp style={{ marginRight: 4 }} /> WhatsApp
           </a>
