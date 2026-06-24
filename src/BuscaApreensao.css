@@ -23,6 +23,9 @@ body {
   margin: 0;
   padding: 0;
 }
+p {
+  margin-bottom: 1rem;
+}
 
 /* ── HERO ── */
 .lp-hero {
