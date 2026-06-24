@@ -135,7 +135,7 @@ export default function BuscaApreensao() {
 
             <h1 className="lp-hero-titulo">
               Veículo apreendido em <em>busca e apreensão</em>?<br />
-             É possível <em>recuperar seu carro</em> — mas o prazo está correndo.
+             É possível <em>recuperar seu carro</em> mas o prazo está correndo.
             </h1>
 
             {/* 

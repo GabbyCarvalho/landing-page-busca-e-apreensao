@@ -1167,6 +1167,22 @@ max-width: 700px;
   text-transform: uppercase;
   color: rgba(10, 10, 10, 0.65);
 }
+.lp-faq-btn {
+  padding: 1.2rem 1rem;
+  text-align: left;
+}
+
+.lp-faq-pergunta {
+  text-align: left;
+}
+.lp-problema-grid {
+  grid-template-columns: 1fr;
+}
+
+.lp-risco-list {
+  padding: 0;
+  margin: 0;
+}
 }
 
 /* Responsivo sobre novo */
@@ -1317,5 +1333,44 @@ max-width: 700px;
 .lp-sobre-novo-texto p strong {
   color: var(--preto);
   font-weight: 600;
+}
+
+.lp-numeros-inline {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  margin: 2rem 0 2.5rem;
+  border: 1px solid rgba(202, 148, 87, 0.25);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.lp-numero-inline-item {
+  flex: 1;
+  text-align: center;
+  padding: 1.2rem 1rem;
+  border-right: 1px solid rgba(202, 148, 87, 0.2);
+  background: rgba(202, 148, 87, 0.04);
+}
+
+.lp-numero-inline-last {
+  border-right: none;
+}
+
+.lp-numero-val {
+  font-family: var(--fonte-titulo);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--dourado-escuro);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.lp-numero-label {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888;
 }
 }
