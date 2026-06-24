@@ -138,14 +138,7 @@ export default function BuscaApreensao() {
              É possível <em>recuperar seu carro</em> mas o prazo está correndo.
             </h1>
 
-            {/* 
-          <div className="lp-hero-urgencia">
-            <FaExclamationTriangle />
-            <p>
-              A apreensão não significa perda definitiva — existem meios legais para recuperar
-              seu veículo. 
-            </p>
-          </div> */}
+
 
           <div className="lp-hero-ctas">
             <a href={WA_LINK} target="_blank" rel="noreferrer" className="lp-btn-primary">
@@ -154,6 +147,15 @@ export default function BuscaApreensao() {
             <a href="#faq" className="lp-btn-ghost">
               Entender meus direitos
             </a>
+          </div>
+
+          <div className="lp-hero-urgencia-mobile">
+            <FaExclamationTriangle />
+            <p>
+              A apreensão <strong>não</strong> significa perda definitiva.{" "}
+              Você tem apenas <strong>5 dias</strong> para agir antes que o
+              banco possa leiloar seu carro.
+            </p>
           </div>
         </div>
 
