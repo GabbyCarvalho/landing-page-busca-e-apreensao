@@ -133,13 +133,12 @@ export default function BuscaApreensao() {
             <img src={logo} alt="Pedro & Naidhig Advogados Associados" />
           </div>
 
-          <h1 className="lp-hero-titulo">
-            Seu veículo foi apreendido no processo de <em>busca e apreensão</em>?<br />
-            Ainda é possível recuperar seu carro, mas o 
-            <em> prazo está correndo.</em>
-          </h1>
+            <h1 className="lp-hero-titulo">
+              Veículo apreendido em <em>busca e apreensão</em>?<br />
+             É possível <em>recuperar seu carro</em> — mas o prazo está correndo.
+            </h1>
 
-{/* 
+            {/* 
           <div className="lp-hero-urgencia">
             <FaExclamationTriangle />
             <p>
