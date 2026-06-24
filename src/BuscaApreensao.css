@@ -1205,6 +1205,14 @@ max-width: 700px;
   line-height: 1.25;
   text-align: center;
 }
+
+.lp-logo {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 }
 
 @media (max-width: 540px) {
