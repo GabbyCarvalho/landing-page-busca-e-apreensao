@@ -439,12 +439,13 @@ export default function BuscaApreensao() {
 
       {/* ── FOOTER ── */}
       <footer className="lp-footer">
-        <p>
+        <p> OAB do escritório: 62676 <br/>
+          CNPJ escritório: 62.347.819/0001-87 <br/><br/>
           © 2026 Pedro & Naidhig Advogados Associados.<br />
           Todos os direitos reservados.
         </p>
         <div className="lp-footer-links">
-          <a href="/privacidade">Política de Privacidade</a>
+          <a href="/politica-de-privacidade">Política de Privacidade</a>
           {/* <a href="/contato">Contato</a> */}
           <a href={WA_LINK} target="_blank" rel="noreferrer">
             <FaWhatsapp style={{ marginRight: 4 }} /> WhatsApp
