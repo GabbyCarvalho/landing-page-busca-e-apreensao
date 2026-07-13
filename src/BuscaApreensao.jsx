@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaWhatsapp,FaStar,  FaGavel, FaCar, FaExclamationTriangle, FaShieldAlt, FaCheckCircle, FaClock, FaUndoAlt, FaPlus, FaMinus  } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import "./BuscaApreensao.css";
@@ -108,6 +108,11 @@ const avaliacoes = [
   },
 ];
 
+// ─── HELPERS ────────────────────────────────────────────────────────────────
+// Remove tags HTML (ex: <strong>) para gerar texto puro exigido pelo schema.org
+function textoLimpo(html) {
+  return html.replace(/<[^>]+>/g, "");
+}
 
 // ─── COMPONENTE ─────────────────────────────────────────────────────────────
 export default function BuscaApreensao() {
@@ -121,6 +126,32 @@ export default function BuscaApreensao() {
       <FaStar key={i} className="lp-estrela" />
     ));
 
+  // Injeta o schema FAQPage (JSON-LD) no <head> a partir do array faqs já existente
+  useEffect(() => {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.pergunta,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: textoLimpo(f.resposta),
+        },
+      })),
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "faq-schema";
+    script.text = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    return () => {
+      const existing = document.getElementById("faq-schema");
+      if (existing) existing.remove();
+    };
+  }, []);
 
   return (
     <>
