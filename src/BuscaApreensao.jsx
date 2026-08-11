@@ -117,9 +117,8 @@ function textoLimpo(html) {
 // ─── COMPONENTE ─────────────────────────────────────────────────────────────
 export default function BuscaApreensao() {
   const [faqAberto, setFaqAberto] = useState(null);
-  const WA_LINK =
-    "https://wa.me/1930200163?text=Ol%C3%A1%2C%20tive%20meu%20ve%C3%ADculo%20apreendido%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20urgente.";
-
+  const mensagem = "Olá, tenho dúvidas sobre busca e apreensão de veículos."
+  const WA_LINK = `https://wa.me/1930200163?text=${encodeURIComponent(mensagem)}`
   const toggleFaq = (i) => setFaqAberto(faqAberto === i ? null : i);
   const renderEstrelas = (nota) =>
     Array.from({ length: nota }, (_, i) => (
